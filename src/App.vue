@@ -2,6 +2,8 @@
 <LifeCycleTest v-if="numberOfClicks < 10" :numberOfClicks="numberOfClicks"/>
 <Congratulations :numberOfClicks="numberOfClicks" />
 <CounterButton @increment="increment" :numberOfClicks="numberOfClicks" />
+<Timer @tick="onTick" name="Timer 1"  :delay="2000" />
+<Timer @tick="onTick" name="Timer 2" :delay="5000" />
 <PeopleList />
 </template>
 
@@ -10,6 +12,7 @@ import PeopleList from './components/PeopleList';
 import CounterButton from './components/CounterButton';
 import Congratulations from './components/Congratulations';
 import LifeCycleTest from './components/LifeCycleTest';
+import Timer from './components/Timer';
 
 export default {
   name: 'App',
@@ -18,6 +21,7 @@ export default {
     CounterButton,
     Congratulations,
     LifeCycleTest,
+    Timer
   },
 
   data(){
@@ -28,6 +32,9 @@ export default {
     methods: {
         increment() {
             this.numberOfClicks += 1;
+        },
+        onTick(name){
+          console.log(name + ': Tick!');
         }
     }
 }
