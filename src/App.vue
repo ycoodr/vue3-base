@@ -1,27 +1,30 @@
 <template>
-<LifeCycleTest v-if="numberOfClicks < 10" :numberOfClicks="numberOfClicks"/>
+<!-- <LifeCycleTest v-if="numberOfClicks < 10" :numberOfClicks="numberOfClicks"/>
 <Congratulations :numberOfClicks="numberOfClicks" />
 <CounterButton @increment="increment" :numberOfClicks="numberOfClicks" />
 <Timer @tick="onTick" name="Timer 1"  :delay="2000" />
 <Timer @tick="onTick" name="Timer 2" :delay="5000" />
-<PeopleList />
+<PeopleList /> -->
+<FlashingMessage message="Hello friends!" :delay="500" />
 </template>
 
 <script>
-import PeopleList from './components/PeopleList';
-import CounterButton from './components/CounterButton';
-import Congratulations from './components/Congratulations';
-import LifeCycleTest from './components/LifeCycleTest';
-import Timer from './components/Timer';
+// import PeopleList from './components/PeopleList';
+// import CounterButton from './components/CounterButton';
+// import Congratulations from './components/Congratulations';
+// import LifeCycleTest from './components/LifeCycleTest';
+// import Timer from './components/Timer';
+import FlashingMessage from './components/FlashingMessage';
 
 export default {
   name: 'App',
   components: {
-    PeopleList,
-    CounterButton,
-    Congratulations,
-    LifeCycleTest,
-    Timer
+    // PeopleList,
+    // CounterButton,
+    // Congratulations,
+    // LifeCycleTest,
+    // Timer,
+    FlashingMessage,
   },
 
   data(){
